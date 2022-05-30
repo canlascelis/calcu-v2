@@ -40,12 +40,16 @@ const Calculator = () => {
         setCalculate(calculate.slice(0, -1));
     }
 
+    const handleTotal = () => {
+
+    }
+
     return (
         <div className='calculator-container'>
             <div className='calculator'>
                 <div className='display'>
                     <span className='result'>{calculate || "0"}</span>
-                    <span className='calculate'>{result ? result : "0"}</span>
+                    <span className='calculate' onChange={handleTotal}>{result ? result : "0"}</span>
                 </div>
                 <div className='all-buttons'>
                     <button className='ops' onClick={clear}>CLEAR</button>
