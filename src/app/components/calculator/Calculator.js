@@ -23,16 +23,17 @@ const Calculator = () => {
             ops.includes(value) && ops.includes(calculate.slice(-1))) {
                 return;
         }
-
+        setResult(calculate + value);
         setCalculate(calculate + value);
     }
-
+    /* The total func */
     function total(){
         setCalculate(eval(calculate.toString()));
     }
 
     function clear() {
         setCalculate('');
+        setResult('');
     }
 
     function deleteCalc() {
@@ -47,10 +48,12 @@ const Calculator = () => {
     return (
         <div className='calculator-container'>
             <div className='calculator'>
+            {/* Display */}
                 <div className='display'>
                     <span className='result'>{calculate || "0"}</span>
-                    <span className='calculate' onChange={handleTotal}>{result ? result : "0"}</span>
+                    <span className='calculate'>{result ? result : "0"}</span>
                 </div>
+            {/* Buttons */}
                 <div className='all-buttons'>
                     <button className='ops' onClick={clear}>CLEAR</button>
                     <button className='ops' onClick={deleteCalc}>Del</button>
