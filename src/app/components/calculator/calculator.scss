@@ -56,13 +56,11 @@ $color-5: #2E85DB;
                 text-align: center;
                 background: $color-1;
                 border: 0;
-                box-shadow: $color-2 1px 3px 6px 0px;
+                box-shadow: $color-2 1px 1px 4px 0px;
                 color: white;
                 font-size: 1rem;
 
-                &:hover {
-                    background: $color-2;
-                }
+                &:hover { background: $color-2; }
             }
 
             .ops {
@@ -70,9 +68,48 @@ $color-5: #2E85DB;
             }
 
             .total {
-                flex-basis: 46%;
+                flex-basis: 43%;
                 background: rgb(202, 134, 7);
                 color: white;
+            }
+        }
+    }
+}
+
+//MOBILE with 950px below
+@media only screen and(max-width: 950px) {
+    .calculator-container {
+        .calculator {
+            width: 29vw;
+
+            .all-buttons {
+
+                .ops,
+                .btn {
+                    height: 9vh;
+                    width: 5vw;
+                    font-size: 0.7rem;
+                }
+
+                .total { flex-basis: 37%; }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 600px){
+    .calculator-container {
+        .calculator {
+            width: 45vw;
+
+            .all-buttons {
+
+                .ops,
+                .btn {
+                    height: 10vh;
+                    width: 8vw;
+                    font-size: 0.7rem;
+                }
             }
         }
     }
