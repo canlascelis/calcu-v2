@@ -1,0 +1,116 @@
+$color-1: #0B2036;
+$color-2: #194775;
+$color-3: #1B4D80;
+$color-4: #3394F5;
+$color-5: #2E85DB;
+
+.calculator-container {
+    height: 100vh;
+    display: flex;
+    color: white;
+
+    .calculator {
+        margin: auto;
+        height: 85vh;
+        width: 25vw;
+        background: $color-1;
+        border-radius: 30px;
+        padding: 20px;
+
+        .display {
+            height: 15vh;
+            flex-basis: 100%;
+            text-align: right;
+            //background: teal;
+            display: flex;
+            overflow: hidden;
+            flex-wrap: wrap;
+
+            .calculate .result {
+                margin: auto;
+            }
+
+            .calculate {
+                flex-basis: 100%;
+            }
+
+            .result {
+                flex-basis: 100%;
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+        }
+
+        .all-buttons {
+            margin-top: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .ops,
+            .btn {
+                border-radius: 11px;
+                margin: 6px;
+                height: 8vh;
+                width: 5vw;
+                text-align: center;
+                background: $color-1;
+                border: 0;
+                box-shadow: $color-2 1px 1px 4px 0px;
+                color: white;
+                font-size: 1rem;
+
+                &:hover { background: $color-2; }
+            }
+
+            .ops {
+                color: orange;
+            }
+
+            .total {
+                flex-basis: 43%;
+                background: rgb(202, 134, 7);
+                color: white;
+            }
+        }
+    }
+}
+
+//MOBILE with 950px below
+@media only screen and(max-width: 950px) {
+    .calculator-container {
+        .calculator {
+            width: 29vw;
+
+            .all-buttons {
+
+                .ops,
+                .btn {
+                    height: 9vh;
+                    width: 5vw;
+                    font-size: 0.7rem;
+                }
+
+                .total { flex-basis: 37%; }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 600px){
+    .calculator-container {
+        .calculator {
+            width: 45vw;
+
+            .all-buttons {
+
+                .ops,
+                .btn {
+                    height: 10vh;
+                    width: 8vw;
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}
